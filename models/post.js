@@ -11,6 +11,7 @@ const postSchema = new Schema({
     unique: true,
   },
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   createdAt: {
     type: Date,
     default: Date.now(),
