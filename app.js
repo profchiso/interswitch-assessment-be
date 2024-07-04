@@ -10,12 +10,11 @@ const { commentRouter } = require("./routes/comment");
 const { undefinedRouter } = require("./routes/undefinedroute");
 
 // db connection
-const { connectToDb, getCache } = require("./utils");
+const { connectToDb, getCache, rateLimiter } = require("./utils");
 
 connectToDb();
 
 const app = express();
-app.enable("trust proxy");
 
 //middlewares
 app.use(express.json({ limit: "100mb" })); //middleware for body-paser
@@ -38,7 +37,8 @@ app.use((req, res, next) => {
 });
 
 //api routes
-app.get("/api/v1", (req, res) => {
+const rateLimiter5_2 = rateLimiter(5, 2);
+app.get("/api/v1", rateLimiter5_2, (req, res) => {
   res.json({
     statusCode: 200,
     statusText: "SUCCESS",
