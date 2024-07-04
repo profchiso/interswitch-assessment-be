@@ -11,6 +11,7 @@ const { authenticate } = require("./auth");
 const { hashUserPassword, decryptPassword } = require("./passwordManipulation");
 const { generateAccessToken } = require("./token");
 const { validationCheck } = require("./validationCheck");
+const { cachingClient, getCache } = require("./caching");
 
 module.exports = {
   connectToDb,
@@ -26,4 +27,6 @@ module.exports = {
   decryptPassword,
   generateAccessToken,
   validationCheck,
+  cachingClient,
+  getCache,
 };
