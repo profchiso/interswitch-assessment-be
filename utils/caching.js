@@ -9,21 +9,20 @@ cachingClient.on("connect", () => {
 });
 cachingClient.connect().catch(console.error);
 
-const getCache = (req, res, next) => {
+const getCache = async (req, res, next) => {
   const cacheKey = req.originalUrl;
-
-  cachingClient.get(cacheKey, (err, data) => {
-    if (err) {
-      console.error("Redis error:", err);
-      return res.status(500).send("Server error");
-    }
+  try {
+    const data = await cachingClient.get(cacheKey);
 
     if (data) {
       return res.status(200).json(JSON.parse(data));
     } else {
       next();
     }
-  });
+  } catch (err) {
+    console.error("Redis error:", err);
+    return res.status(500).send("Server error");
+  }
 };
 
 module.exports = { cachingClient, getCache };
