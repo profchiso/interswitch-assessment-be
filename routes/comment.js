@@ -1,6 +1,6 @@
 const express = require("express");
 const {
-  getComments,
+  getAllComments,
   getAComment,
   createComment,
   updateComment,
@@ -11,7 +11,7 @@ const { CommentCreationValidation } = require("../validations/comment");
 
 const commentRouter = express.Router();
 commentRouter.use(authenticate); // authenticate comment routes
-commentRouter.get("/", getComments);
+commentRouter.get("/", getAllComments);
 commentRouter.get("/:id", getAComment);
 commentRouter.post("/", CommentCreationValidation, createComment);
 commentRouter.patch("/:id", updateComment);

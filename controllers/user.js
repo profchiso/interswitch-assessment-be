@@ -109,7 +109,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.updateUser = async (req, res) => {
+exports.updateAUser = async (req, res) => {
   try {
     updateDocument(req, res, User);
   } catch (error) {

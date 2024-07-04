@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 
 //user defined modules
-const { userRouter } = require("./routes/users");
+const { userRouter } = require("./routes/user");
 const { postRouter } = require("./routes/post");
 const { commentRouter } = require("./routes/comment");
 const { undefinedRouter } = require("./routes/undefinedroute");
