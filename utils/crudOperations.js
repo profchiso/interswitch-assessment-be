@@ -120,11 +120,8 @@ exports.getOne = async (
         errors: [{ msg: "Resource not found" }],
       });
     }
-    res.status(STATUS_CODES.OK).json({
-      statusCode: STATUS_CODES.OK,
-      responseText: RESPONSE_TEXT.SUCCESS,
-      data: { msg, resource },
-    });
+
+    return { msg, resource };
   } catch (error) {
     console.log(error);
   }
@@ -163,14 +160,10 @@ exports.updateDocument = async (
 
     const resourceToReturn = { ...updatedResource._doc };
 
-    return res.status(STATUS_CODES.OK).json({
-      statusCode: STATUS_CODES.OK,
-      responseText: RESPONSE_TEXT.SUCCESS,
-      data: {
-        msg,
-        resource: resourceToReturn,
-      },
-    });
+    return {
+      msg,
+      resource: resourceToReturn,
+    };
   } catch (error) {
     console.log(error);
   }
@@ -198,14 +191,10 @@ exports.deleteDocument = async (
       });
     }
     await model.findByIdAndDelete(req.params.id);
-    return res.status(STATUS_CODES.OK).json({
-      statusCode: STATUS_CODES.OK,
-      responseText: RESPONSE_TEXT.SUCCESS,
-      data: {
-        msg,
-        resource: {},
-      },
-    });
+    return {
+      msg,
+      resource: {},
+    };
   } catch (error) {
     console.log(error);
   }
