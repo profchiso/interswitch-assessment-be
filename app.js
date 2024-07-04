@@ -10,7 +10,7 @@ const { commentRouter } = require("./routes/comment");
 const { undefinedRouter } = require("./routes/undefinedroute");
 
 // db connection
-const { connectToDb, getCache, rateLimiter } = require("./utils");
+const { connectToDb, rateLimiter } = require("./utils");
 
 connectToDb();
 

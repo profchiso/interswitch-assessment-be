@@ -1,12 +1,13 @@
 const redis = require("redis");
-const cachingClient = redis.createClient();
+const cachingClient = redis.createClient({ host: "127.0.0.1", port: 6379 });
 
 cachingClient.on("error", (err) => {
   console.error("Redis error:", err);
 });
 cachingClient.on("connect", () => {
-  console.log("Connected to Redis");
+  console.log("Connected successfully to Redis server");
 });
+cachingClient.connect().catch(console.error);
 
 const getCache = (req, res, next) => {
   const cacheKey = req.originalUrl;

@@ -1,6 +1,8 @@
 const { isValidObjectId } = require("mongoose");
 const { excludedQueryFields } = require("./excludedFields");
 const { RESPONSE_TEXT, STATUS_CODES } = require("./response");
+const { cachingClient } = require("./caching");
+
 exports.getAll = async (
   req,
   res,
@@ -78,6 +80,17 @@ exports.getAll = async (
     //execute query
     const result = await query; // query.sort().select().skip().limit()
 
+    //cache results
+    const responseData = {
+      msg,
+      total: numberOfDocument,
+      resource: result,
+      extra,
+    };
+
+    const cacheKey = req.originalUrl;
+    cachingClient.setEx(cacheKey, 600, JSON.stringify(responseData));
+
     return { msg, total: numberOfDocument, resource: result, extra };
   } catch (error) {
     console.log(error);
@@ -113,6 +126,17 @@ exports.getOne = async (
       }
     }
     resource = await resource;
+
+    //cache result
+    const responseData = {
+      msg,
+      resource,
+    };
+
+    //cache request
+    const cacheKey = req.originalUrl;
+    cachingClient.setEx(cacheKey, 600, JSON.stringify(responseData));
+
     if (!resource) {
       return res.status(STATUS_CODES.NOT_FOUND).json({
         statusCode: STATUS_CODES.NOT_FOUND,

@@ -6,7 +6,7 @@ const {
   login,
   updateAUser,
 } = require("../controllers/user");
-const { authenticate, rateLimiter } = require("../utils");
+const { authenticate, rateLimiter, getCache } = require("../utils");
 const {
   UserCreationValidation,
   UserLoginValidation,
@@ -17,8 +17,8 @@ const rateLimiter5_1 = rateLimiter(5, 1); //for login 5 attempts in  1 minute
 
 const userRouter = express.Router();
 
-userRouter.get("/", authenticate, rateLimiter20_1, getUsers);
-userRouter.get("/:id", authenticate, rateLimiter20_1, getAUser);
+userRouter.get("/", authenticate, rateLimiter20_1, getCache, getUsers);
+userRouter.get("/:id", authenticate, rateLimiter20_1, getCache, getAUser);
 userRouter.post("/", UserCreationValidation, createUser);
 userRouter.post("/login", UserLoginValidation, rateLimiter5_1, login);
 userRouter.patch("/:id", authenticate, rateLimiter20_1, updateAUser);
