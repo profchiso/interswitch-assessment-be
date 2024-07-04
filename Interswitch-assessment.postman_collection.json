@@ -1,0 +1,1588 @@
+{
+	"info": {
+		"_postman_id": "00e65242-d987-42b5-a9fb-2eeb538dce13",
+		"name": "Interswitch-assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7669287",
+		"_collection_link": "https://planetary-resonance-955519.postman.co/workspace/profchiso's-Public-Workspace~018210f1-01aa-4b4a-b516-4f23453f3ee8/collection/7669287-00e65242-d987-42b5-a9fb-2eeb538dce13?action=share&source=collection_link&creator=7669287"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "20;w=60"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=20, remaining=19, reset=60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "351"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15f-sOTTqC8t7WKrVaB7MQ6C38chU4Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:14:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Users Fetched successfully\",\n        \"total\": 2,\n        \"resource\": [\n            {\n                \"_id\": \"66867518aca28e5d61412cba\",\n                \"name\": \"test name\",\n                \"email\": \"test2@yopmail.com\",\n                \"createdAt\": \"2024-07-04T10:09:41.994Z\"\n            },\n            {\n                \"_id\": \"66867073c98653c84cc6dc4e\",\n                \"name\": \"test name\",\n                \"email\": \"test@yopmail.com\",\n                \"createdAt\": \"2024-07-04T09:47:45.242Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/users/66867518aca28e5d61412cba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"66867518aca28e5d61412cba"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/users/66867518aca28e5d61412cba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"66867518aca28e5d61412cba"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "20;w=60"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=20, remaining=15, reset=57"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb-wxFme8f7Gy/uH4MThidv0RevmPs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:17:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Successful\",\n        \"resource\": {\n            \"_id\": \"66867518aca28e5d61412cba\",\n            \"name\": \"test name\",\n            \"email\": \"test2@yopmail.com\",\n            \"createdAt\": \"2024-07-04T10:09:41.994Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"test name\",\n    \"email\":\"test@yopmail.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"test name\",\n    \"email\":\"test2@yopmail.com\",\n    \"password\":\"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "234"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ea-sK3gRSRAb051Y8qJRkOCP6wjIWw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:10:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"responseText\": \"FAIL\",\n    \"data\": {\n        \"msg\": \"User Created Successfully\",\n        \"resource\": {\n            \"name\": \"test name\",\n            \"email\": \"test2@yopmail.com\",\n            \"createdAt\": \"2024-07-04T10:09:41.994Z\",\n            \"_id\": \"66867518aca28e5d61412cba\",\n            \"__v\": 0\n        },\n        \"extra\": {}\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n    \"email\":\"test2@yopmail.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n    \"email\":\"test2@yopmail.com\",\n    \"password\":\"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "5;w=60"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=5, remaining=4, reset=60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ab-amSvjj9ujUx9jQUuz4Q9WpiTsrQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:11:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Login successful\",\n        \"resource\": {\n            \"_id\": \"66867518aca28e5d61412cba\",\n            \"name\": \"test name\",\n            \"email\": \"test2@yopmail.com\",\n            \"createdAt\": \"2024-07-04T10:09:41.994Z\",\n            \"__v\": 0\n        },\n        \"extra\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Chinedu Okorie1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/v1/users/66867518aca28e5d61412cba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"66867518aca28e5d61412cba"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Chinedu Okorie1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/users/66867518aca28e5d61412cba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"66867518aca28e5d61412cba"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "20;w=60"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=20, remaining=19, reset=60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-nHNlZ9CxTR4Usn2iBystN/x7YJA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:22:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"FAIL\",\n    \"data\": {\n        \"msg\": \"Resource updated successfully\",\n        \"resource\": {\n            \"_id\": \"66867518aca28e5d61412cba\",\n            \"name\": \"Chinedu Okorie1\",\n            \"email\": \"test2@yopmail.com\",\n            \"createdAt\": \"2024-07-04T10:09:41.994Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "get posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=49, reset=120"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "438"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b6-XfZNNdFT1M8Eenhua8SQpXuGgCk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:46:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Posts Fetched successfully\",\n        \"total\": 2,\n        \"resource\": [\n            {\n                \"_id\": \"66867c6b288378da7a65211d\",\n                \"title\": \"Post title\",\n                \"body\": \"Post body\",\n                \"user\": {\n                    \"name\": \"Chinedu Okorie1\"\n                },\n                \"comments\": [],\n                \"createdAt\": \"2024-07-04T10:39:51.597Z\"\n            },\n            {\n                \"_id\": \"66867d4c288378da7a65212b\",\n                \"title\": \"Post title 2\",\n                \"body\": \"Post body 2\",\n                \"user\": {\n                    \"name\": \"Chinedu Okorie1\"\n                },\n                \"comments\": [],\n                \"createdAt\": \"2024-07-04T10:39:51.597Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/posts/66867c6b288378da7a65211d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"66867c6b288378da7a65211d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/posts/66867c6b288378da7a65211d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"66867c6b288378da7a65211d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=48, reset=42"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-f4V2/t1g6esHVpAQ4/7WOTDhS7U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:48:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Post Fetched successfully\",\n        \"resource\": {\n            \"_id\": \"66867c6b288378da7a65211d\",\n            \"title\": \"Post title\",\n            \"body\": \"Post body\",\n            \"user\": {\n                \"name\": \"Chinedu Okorie1\"\n            },\n            \"comments\": [],\n            \"createdAt\": \"2024-07-04T10:39:51.597Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Post title 2\",\n    \"body\":\"Post body 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Post title\",\n    \"body\":\"Post body\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=48, reset=44"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-k+1M68fxOoynwW/cf7FAvxmA3MU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:41:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Post created successfully\",\n        \"resource\": {\n            \"title\": \"Post title\",\n            \"body\": \"Post body\",\n            \"user\": \"66867518aca28e5d61412cba\",\n            \"comments\": [],\n            \"createdAt\": \"2024-07-04T10:39:51.597Z\",\n            \"_id\": \"66867c6b288378da7a65211d\",\n            \"__v\": 0\n        },\n        \"extra\": {}\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"post title updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/v1/posts/66867c91288378da7a652120",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"66867c91288378da7a652120"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update post",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"post title updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/posts/66867c91288378da7a652120",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"66867c91288378da7a652120"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=49, reset=120"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-ck3axDW8ZBcnBdZ7qjXzmOvadzg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:44:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Post updated successfully\",\n        \"resource\": {\n            \"_id\": \"66867c91288378da7a652120\",\n            \"title\": \"post title updated\",\n            \"body\": \"Post body 2\",\n            \"user\": \"66867518aca28e5d61412cba\",\n            \"comments\": [],\n            \"createdAt\": \"2024-07-04T10:39:51.597Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/posts/66867c91288378da7a652120",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"66867c91288378da7a652120"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/posts/66867c91288378da7a652120",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"66867c91288378da7a652120"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=48, reset=72"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-Fwr+ocU1IqZZenT8I8bf4zvprfk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 10:44:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Post deleted successfully\",\n        \"resource\": {}\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "get comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=46, reset=61"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "772"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"304-/aiGpz4QNrXJryzqwW02jcvxaPo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 11:21:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Comments Fetched successfully\",\n        \"total\": 4,\n        \"resource\": [\n            {\n                \"_id\": \"66868590738d080f3108c9d7\",\n                \"body\": \"post comment\",\n                \"user\": {\n                    \"name\": \"Chinedu Okorie1\"\n                },\n                \"post\": \"66867c6b288378da7a65211d\",\n                \"createdAt\": \"2024-07-04T11:20:34.554Z\"\n            },\n            {\n                \"_id\": \"6686859b738d080f3108c9dc\",\n                \"body\": \"post comment2\",\n                \"user\": {\n                    \"name\": \"Chinedu Okorie1\"\n                },\n                \"post\": \"66867c6b288378da7a65211d\",\n                \"createdAt\": \"2024-07-04T11:20:34.554Z\"\n            },\n            {\n                \"_id\": \"668685a4738d080f3108c9e1\",\n                \"body\": \"post comment23\",\n                \"user\": {\n                    \"name\": \"Chinedu Okorie1\"\n                },\n                \"post\": \"66867c6b288378da7a65211d\",\n                \"createdAt\": \"2024-07-04T11:20:34.554Z\"\n            },\n            {\n                \"_id\": \"6686842e0b51d07355761a49\",\n                \"body\": \"post comment\",\n                \"user\": {\n                    \"name\": \"Chinedu Okorie1\"\n                },\n                \"post\": \"66867c6b288378da7a65211d\",\n                \"createdAt\": \"2024-07-04T11:10:05.003Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/comments/66868590738d080f3108c9d7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"66868590738d080f3108c9d7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/comments/66868590738d080f3108c9d7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"comments",
+										"66868590738d080f3108c9d7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=45, reset=16"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"108-64z3hYTNwOnRWhBoKrL6JDCwlH4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 11:22:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Comment Fetched successfully\",\n        \"resource\": {\n            \"_id\": \"66868590738d080f3108c9d7\",\n            \"body\": \"post comment\",\n            \"user\": {\n                \"name\": \"Chinedu Okorie1\"\n            },\n            \"post\": \"66867c6b288378da7a65211d\",\n            \"createdAt\": \"2024-07-04T11:20:34.554Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create  comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4Njc1MThhY2EyOGU1ZDYxNDEyY2JhIn0sImlhdCI6MTcyMDA4Nzg5OCwiZXhwIjoxNzIwMTc0Mjk4fQ.yeRC5meEOIgkXZ5AJ0zS_XTmmLCHCadzTwn49kWPvzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\":\"post comment\",\n    \"post\":\"66867c6b288378da7a65211d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/v1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create  comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"body\":\"post comment23\",\n    \"post\":\"66867c6b288378da7a65211d\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"comments"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=47, reset=100"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-PvPU/BsJqUO6RIfD2dhpkNNpR/c\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 11:21:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Comment created successfully\",\n        \"resource\": {\n            \"body\": \"post comment23\",\n            \"user\": \"66867518aca28e5d61412cba\",\n            \"post\": \"66867c6b288378da7a65211d\",\n            \"createdAt\": \"2024-07-04T11:20:34.554Z\",\n            \"_id\": \"668685a4738d080f3108c9e1\",\n            \"__v\": 0\n        },\n        \"extra\": {}\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/comments/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"id"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update comment",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"body\":\"updated comment\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/v1/comments/66868590738d080f3108c9d7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"comments",
+										"66868590738d080f3108c9d7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=49, reset=120"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"113-LG1xf9ykd3TMTD47Y160Spw9rFs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 11:23:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Comment updated successfully\",\n        \"resource\": {\n            \"_id\": \"66868590738d080f3108c9d7\",\n            \"body\": \"updated comment\",\n            \"user\": \"66867518aca28e5d61412cba\",\n            \"post\": \"66867c6b288378da7a65211d\",\n            \"createdAt\": \"2024-07-04T11:20:34.554Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/v1/comments/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"id"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/comments/668685a4738d080f3108c9e1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"comments",
+										"668685a4738d080f3108c9e1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "50;w=120"
+								},
+								{
+									"key": "RateLimit",
+									"value": "limit=50, remaining=48, reset=64"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-XALnfl0gDmeUPjwp4bBSkenkz0E\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jul 2024 11:24:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseText\": \"SUCCESS\",\n    \"data\": {\n        \"msg\": \"Comment deleted successfully\",\n        \"resource\": {}\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "root route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

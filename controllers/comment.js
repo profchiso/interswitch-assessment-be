@@ -100,6 +100,7 @@ exports.createComment = async (req, res) => {
       {},
       "Comment created successfully"
     );
+    console.log(data);
     post.comments.push(data.resource._id);
     await post.save();
     res.status(STATUS_CODES.CREATED).json({
