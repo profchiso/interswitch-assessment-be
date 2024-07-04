@@ -11,18 +11,60 @@ const {
 
 const { Post } = require("../models/post");
 
+const populate = {
+  required: true,
+  field: "user",
+  columns: "name",
+};
+
 exports.getAllPosts = async (req, res) => {
   try {
-    getAll(req, res, Post);
+    const data = await getAll(
+      req,
+      res,
+      Post,
+      ["__v"],
+      populate,
+      "Posts Fetched successfully"
+    );
+
+    res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.SUCCESS,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 exports.getAPost = async (req, res) => {
   try {
-    getOne(req, res, Post);
+    const data = await getOne(
+      req,
+      res,
+      Post,
+      ["__v"],
+      populate,
+      "Post Fetched successfully"
+    );
+
+    res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.SUCCESS,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 
@@ -30,7 +72,7 @@ exports.createPost = async (req, res) => {
   try {
     await validationCheck(req, res);
     req.body.user = req.user.id;
-    const created = await createDocument(
+    const data = await createDocument(
       req,
       res,
       Post,
@@ -40,10 +82,15 @@ exports.createPost = async (req, res) => {
     res.status(STATUS_CODES.CREATED).json({
       statusCode: STATUS_CODES.CREATED,
       responseText: RESPONSE_TEXT.SUCCESS,
-      data: created,
+      data,
     });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 
@@ -60,9 +107,25 @@ exports.updatePost = async (req, res) => {
         errors: [{ msg: "You can only update a Post that belongs to you" }],
       });
     }
-    updateDocument(req, res, Post, "Post updated successfully");
+    const data = await updateDocument(
+      req,
+      res,
+      Post,
+      "Post updated successfully"
+    );
+
+    res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.SUCCESS,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 
@@ -79,8 +142,23 @@ exports.deletePost = async (req, res) => {
         errors: [{ msg: "You can only update a Post that belongs to you" }],
       });
     }
-    deleteDocument(req, res, Post, "Post deleted successfully");
+    const data = await deleteDocument(
+      req,
+      res,
+      Post,
+      "Post deleted successfully"
+    );
+    res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.SUCCESS,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };

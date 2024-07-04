@@ -149,14 +149,12 @@ exports.updateDocument = async (
       });
     }
 
-    const updatedResource = await model.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
+    const updatedResource = await model
+      .findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true,
-      }
-    );
+      })
+      .select("-password");
 
     const resourceToReturn = { ...updatedResource._doc };
 
