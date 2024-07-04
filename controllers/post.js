@@ -14,7 +14,7 @@ const { Post } = require("../models/post");
 const populate = {
   required: true,
   field: "user",
-  columns: "name",
+  columns: "name -_id",
 };
 
 exports.getAllPosts = async (req, res) => {
