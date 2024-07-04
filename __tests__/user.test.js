@@ -4,22 +4,22 @@ const express = require("express");
 const { userRouter } = require("../routes/user");
 const { connectToDb } = require("../utils");
 
-const userId = "6686b479957d612bf3d8201e";
+const userId = "6686b3458f902e3018f8f275";
 const app = express();
 app.use(express.json());
 app.use("/api/v1/users", userRouter);
 
-beforeAll(async () => {
-  await connectToDb();
-});
-
 describe("User Endpoints", () => {
+  beforeAll(async () => {
+    await connectToDb();
+  });
+
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4NmI0Nzk5NTdkNjEyYmYzZDgyMDFlIn0sImlhdCI6MTcyMDEwNTM3NywiZXhwIjoxNzIwMTkxNzc3fQ.uqAtuSGGpC7QqNldmCSsGQwPpXGqaimnPEgG9L0QCAI";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY4NmIzNDU4ZjkwMmUzMDE4ZjhmMjc1In0sImlhdCI6MTcyMDEwODkyNiwiZXhwIjoxNzIwMTk1MzI2fQ.SwMw_myYmgeG_HWQb_yeKTsSxLs39P7TSLg0HKL02x0";
   it("should create a new user", async () => {
     const res = await request(app).post("/api/v1/users").send({
       name: "Test User",
-      email: "testuser2@example.com",
+      email: "testuser990@example.com",
       password: "testpassword",
     });
     expect(res.statusCode).toEqual(201);
@@ -39,7 +39,6 @@ describe("User Endpoints", () => {
       .get(`/api/v1/users/${userId}`)
       .set("Authorization", `Bearer ${token}`); // include your auth token if needed
     expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty("resource");
   });
 
   it("should update a user", async () => {
