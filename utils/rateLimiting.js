@@ -6,6 +6,7 @@ const rateLimiter = (limit = 10, minutes = 10) => {
     limit,
     standardHeaders: "draft-7", // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
     legacyHeaders: false,
+    message: `Request limit exceeded for this endpoint , ${limit} requests are allowed within ${minutes} minutes`,
   });
 };
 

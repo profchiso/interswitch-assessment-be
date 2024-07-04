@@ -78,18 +78,9 @@ exports.getAll = async (
     //execute query
     const result = await query; // query.sort().select().skip().limit()
 
-    res.status(STATUS_CODES.OK).json({
-      statusCode: STATUS_CODES.OK,
-      responseText: RESPONSE_TEXT.SUCCESS,
-      data: { msg, total: numberOfDocument, resource: result, extra },
-    });
+    return { msg, total: numberOfDocument, resource: result, extra };
   } catch (error) {
     console.log(error);
-    return res.status(STATUS_CODES.BAD_REQUEST).json({
-      statusCode: STATUS_CODES.BAD_REQUEST,
-      responseText: RESPONSE_TEXT.FAIL,
-      errors: [{ msg: error.message || "something went wrong" }],
-    });
   }
 };
 exports.getOne = async (
@@ -136,11 +127,6 @@ exports.getOne = async (
     });
   } catch (error) {
     console.log(error);
-    return res.status(STATUS_CODES.BAD_REQUEST).json({
-      statusCode: STATUS_CODES.BAD_REQUEST,
-      responseText: RESPONSE_TEXT.FAIL,
-      errors: [{ msg: error.message }],
-    });
   }
 };
 exports.updateDocument = async (
@@ -187,11 +173,6 @@ exports.updateDocument = async (
     });
   } catch (error) {
     console.log(error);
-    return res.status(STATUS_CODES.BAD_REQUEST).json({
-      statusCode: STATUS_CODES.BAD_REQUEST,
-      responseText: RESPONSE_TEXT.FAIL,
-      errors: [{ msg: error.message }],
-    });
   }
 };
 exports.deleteDocument = async (
@@ -227,11 +208,6 @@ exports.deleteDocument = async (
     });
   } catch (error) {
     console.log(error);
-    return res.status(STATUS_CODES.BAD_REQUEST).json({
-      statusCode: STATUS_CODES.BAD_REQUEST,
-      responseText: RESPONSE_TEXT.FAIL,
-      errors: [{ msg: error.message }],
-    });
   }
 };
 exports.createDocument = async (
@@ -248,21 +224,12 @@ exports.createDocument = async (
 
     delete resource.password;
 
-    return res.status(STATUS_CODES.OK).json({
-      statusCode: STATUS_CODES.OK,
-      responseText: RESPONSE_TEXT.SUCCESS,
-      data: {
-        msg,
-        resource,
-        extra,
-      },
-    });
+    return {
+      msg,
+      resource,
+      extra,
+    };
   } catch (error) {
     console.log(error);
-    return res.status(STATUS_CODES.BAD_REQUEST).json({
-      statusCode: STATUS_CODES.BAD_REQUEST,
-      responseText: RESPONSE_TEXT.FAIL,
-      errors: [{ msg: error.message }],
-    });
   }
 };

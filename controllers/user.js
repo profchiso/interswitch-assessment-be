@@ -15,7 +15,7 @@ const { User } = require("../models/user");
 
 exports.getUsers = async (req, res) => {
   try {
-    getAll(
+    const data = await getAll(
       req,
       res,
       User,
@@ -23,15 +23,37 @@ exports.getUsers = async (req, res) => {
       { required: false },
       "Users Fetched successfully"
     );
+
+    res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.SUCCESS,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 exports.getAUser = async (req, res) => {
   try {
-    getOne(req, res, User, ["password", "__v"]);
+    const data = await getOne(req, res, User, ["password", "__v"]);
+
+    res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.SUCCESS,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 
@@ -55,9 +77,25 @@ exports.createUser = async (req, res) => {
     req.body.password = hashedPassword;
     req.body.email = req.body.email.toLowerCase();
 
-    createDocument(req, res, User, {}, "User Created Successfully");
+    const data = await createDocument(
+      req,
+      res,
+      User,
+      {},
+      "User Created Successfully"
+    );
+    res.status(STATUS_CODES.CREATED).json({
+      statusCode: STATUS_CODES.CREATED,
+      responseText: RESPONSE_TEXT.FAIL,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 
@@ -106,13 +144,28 @@ exports.login = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };
 
 exports.updateAUser = async (req, res) => {
   try {
-    updateDocument(req, res, User);
+    const data = await updateDocument(req, res, User);
+    return res.status(STATUS_CODES.OK).json({
+      statusCode: STATUS_CODES.OK,
+      responseText: RESPONSE_TEXT.FAIL,
+      data,
+    });
   } catch (error) {
     console.log(error);
+    return res.status(STATUS_CODES.BAD_REQUEST).json({
+      statusCode: STATUS_CODES.BAD_REQUEST,
+      responseText: RESPONSE_TEXT.FAIL,
+      errors: [{ msg: error.message || "something went wrong" }],
+    });
   }
 };

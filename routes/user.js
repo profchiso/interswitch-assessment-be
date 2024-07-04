@@ -6,7 +6,7 @@ const {
   login,
   updateAUser,
 } = require("../controllers/user");
-const { authenticate, rateLimiter, rateLimiter } = require("../utils");
+const { authenticate, rateLimiter } = require("../utils");
 const {
   UserCreationValidation,
   UserLoginValidation,
