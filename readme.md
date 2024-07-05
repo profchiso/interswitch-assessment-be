@@ -4,7 +4,9 @@ Repository for Interswitch backend assessment of Okorie Chinedu Sunday
 
 # Introduction
 
-This project is about a RESTful API for user and post management. users will be able to create account, login into their account. upon successful login, the user will be to view,create, update, and delete posts and comment
+This project is about a RESTful API for user and post management. users will be able to create account, login into their account. upon successful login, the user will be to view,create, update, and delete posts and comment.
+
+The API uses caching for faster data retrieval, rate limiting for some endpoints to mitigate against abuse.
 
 # Folder Structure
 
