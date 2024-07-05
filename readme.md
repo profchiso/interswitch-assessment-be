@@ -15,7 +15,7 @@ The API uses caching for faster data retrieval, rate limiting for some endpoints
 3. **routes** : This contains files that handles all the api routes.
 4. **utils** : This contains utility logics like some of which are reused in some part of the applications.
 5. **validation** : This contains files for validation logics.
-6. \***\*tests\*\*** : This contains files for unit tests.
+6. **tests\*\*** : This contains files for unit tests.
 
 ## How to set up the application locally
 
@@ -31,4 +31,4 @@ The API uses caching for faster data retrieval, rate limiting for some endpoints
 
 - **Features**: Users can Create, view, update and delete post and comment. create user,view users, and user login. user cannot delete or update a post or comment that does not belong to them
 
-- **Technologies** Nodejs, express and MongoDB alongside with relevant NPM libraries
+- **Technologies** Nodejs, express and MongoDB alongside with relevant NPM libraries which are detailed in the `package.json`
