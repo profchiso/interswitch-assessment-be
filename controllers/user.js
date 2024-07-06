@@ -86,7 +86,7 @@ exports.createUser = async (req, res) => {
     );
     res.status(STATUS_CODES.CREATED).json({
       statusCode: STATUS_CODES.CREATED,
-      responseText: RESPONSE_TEXT.FAIL,
+      responseText: RESPONSE_TEXT.SUCCESS,
       data,
     });
   } catch (error) {
@@ -157,7 +157,7 @@ exports.updateAUser = async (req, res) => {
     const data = await updateDocument(req, res, User);
     return res.status(STATUS_CODES.OK).json({
       statusCode: STATUS_CODES.OK,
-      responseText: RESPONSE_TEXT.FAIL,
+      responseText: RESPONSE_TEXT.SUCCESS,
       data,
     });
   } catch (error) {

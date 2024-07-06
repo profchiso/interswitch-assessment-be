@@ -23,7 +23,8 @@ The API uses caching for faster data retrieval, rate limiting for some endpoints
 2. Change directory to the cloned app using the command `cd interswitch-assessment-be`
 3. Install all dependencies using the command `npm install`
 4. Set the environment variables as found **[here](https://github.com/profchiso/interswitch-assessment-be/blob/main/env.example.txt)**
-5. Run the application using the command `npm start` or `npm run dev` to run the application using `nodemon`
+5. Start redis using docker with the command `docker run --name my-redis -p 6379:6379 -d redis`
+6. Run the application using the command `npm start` or `npm run dev` to run the application using `nodemon`
 
 # Other information
 
