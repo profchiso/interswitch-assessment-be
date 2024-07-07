@@ -30,6 +30,17 @@ exports.getAll = async (
       .find(JSON.parse(queryToString))
       .select(excludedFields.length ? `-${excludedFields.join(" -")}` : []); // the .select excludes any specified field before sending the document
 
+    // Search functionality
+    if (req.query.search) {
+      const search = req.query.search;
+      query = query.find({
+        $or: [
+          { name: { $regex: search, $options: "i" } }, // case-insensitive search on name
+          { email: { $regex: search, $options: "i" } }, // case-insensitive search on email
+        ],
+      });
+    }
+
     //sorting query result
     if (req.query.sort) {
       // to sort pass the sort param ie ?sort="field1,field2,..." //ascending
