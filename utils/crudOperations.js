@@ -30,7 +30,7 @@ exports.getAll = async (
       .find(JSON.parse(queryToString))
       .select(excludedFields.length ? `-${excludedFields.join(" -")}` : []); // the .select excludes any specified field before sending the document
 
-    // Search functionality
+    // Search functionality ?name or email=value
     if (req.query.search) {
       const search = req.query.search;
       query = query.find({
