@@ -139,7 +139,7 @@ exports.deletePost = async (req, res) => {
       return res.status(STATUS_CODES.BAD_REQUEST).json({
         statusCode: STATUS_CODES.BAD_REQUEST,
         responseText: RESPONSE_TEXT.FAIL,
-        errors: [{ msg: "You can only update a Post that belongs to you" }],
+        errors: [{ msg: "You can only delete a Post that belongs to you" }],
       });
     }
     const data = await deleteDocument(

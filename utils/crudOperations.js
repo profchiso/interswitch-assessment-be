@@ -100,7 +100,7 @@ exports.getAll = async (
     };
 
     const cacheKey = req.originalUrl;
-    cachingClient.setEx(cacheKey, 600, JSON.stringify(responseData));
+    cachingClient.setEx(cacheKey, 2, JSON.stringify(responseData));
 
     return { msg, total: numberOfDocument, resource: result, extra };
   } catch (error) {
